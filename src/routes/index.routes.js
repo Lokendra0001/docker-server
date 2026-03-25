@@ -3,6 +3,6 @@ const router = express.Router();
 const indexController = require("../controllers/index.controller");
 
 // Basic API Check
-router.get("/", indexController.healthCheck);
+router.get("/health", indexController.healthCheck);
 
 module.exports = router;

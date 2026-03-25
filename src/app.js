@@ -13,6 +13,10 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api", routes);
+
+app.get("/", async (req, res) => {
+  res.send("Hello From server!");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

@@ -35,7 +35,7 @@ services:
     container_name: nginx
     ports:
       - "8080:80"
-      - "443:443"
+      - "4343:443"
     environment:
       DOMAIN_NAME: ${DOMAIN_NAME}
       BACKEND_URL: ${BACKEND_URL}

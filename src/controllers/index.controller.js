@@ -8,4 +8,4 @@ const indexController = {
     }
 };
 
-module.exports = indexController;
+export default indexController;

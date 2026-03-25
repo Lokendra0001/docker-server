@@ -1,8 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const indexController = require("../controllers/index.controller");
+import indexController from "../controllers/index.controller.js";
+import userRouter from "./user-router.js";
 
 // Basic API Check
+router.use("/user", userRouter);
 router.get("/health", indexController.healthCheck);
 
-module.exports = router;
+export default router;

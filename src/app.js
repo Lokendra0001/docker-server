@@ -1,7 +1,7 @@
-const express = require("express");
-const cors = require("cors");
-const morgan = require("morgan");
-const routes = require("./routes/index.routes");
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import routes from "./routes/index.routes.js";
 
 const app = express();
 
@@ -17,10 +17,11 @@ app.use("/api", routes);
 app.get("/", async (req, res) => {
   res.send("Hello From server!");
 });
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Internal Server Error" });
 });
 
-module.exports = app;
+export default app;

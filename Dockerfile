@@ -5,4 +5,4 @@ RUN npm install --production
 COPY . .
 RUN npx prisma generate
 EXPOSE 5001
-CMD ["node", "src/index.js"]
+CMD ["sh", "-c", "sleep 5 && npx prisma db push && node src/index.js"]

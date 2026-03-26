@@ -16,6 +16,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Debug SSH Key
+        run: |
+          if [ -z "${{ secrets.SSH_KEY }}" ]; then
+            echo "❌ SSH_KEY is EMPTY"
+          else
+            echo "✅ SSH_KEY is present"
+          fi
 
       - name: Deploy to Linux Server
         uses: appleboy/ssh-action@v1.2.5

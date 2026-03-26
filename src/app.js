@@ -15,7 +15,11 @@ app.use(morgan("dev"));
 app.use("/api", routes);
 
 app.get("/", async (req, res) => {
-  res.send("Hello From server!");
+  console.log(`Worker Process Id : ${process.pid}`);
+  return res.json({
+    process: `Worker Process Id : ${process.pid}`,
+    msg: "Hello From server!",
+  });
 });
 
 // Error handling middleware

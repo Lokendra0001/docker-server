@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
   console.log(`Worker Process Id : ${process.pid}`);
   return res.json({
     process: `Worker Process Id : ${process.pid}`,
-    msg: "Hello From server!",
+    msg: "Hello From Docker Server!",
   });
 });
 

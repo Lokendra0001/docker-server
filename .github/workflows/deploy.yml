@@ -30,7 +30,6 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: root
           key: ${{ secrets.SSH_KEY }}
-          key_format: base64
           port: 22
           script: |
             cd ~/docker-server
